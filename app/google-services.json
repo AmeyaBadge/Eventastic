@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "506937152315",
+    "project_id": "eventastic-79d68",
+    "storage_bucket": "eventastic-79d68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506937152315:android:047b0db3f3da5451b9dd1e",
+        "android_client_info": {
+          "package_name": "com.amykoder.eventastic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiNhyRSrl11k492RmJ9lsQ2FNvxD5y3qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

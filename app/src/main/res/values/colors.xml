@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="appPurpleDark">#04063D</color>
+    <color name="appPurpleLight">#31305E</color>
+    <color name="appNavyBlueDarkPrimary">#1634AA</color>
+    <color name="appNavyBlueDarkSecondary">#1C34AA</color>
+    <color name="appPinkHighlight">#F8978C</color>
+    <color name="appPinkLightBorder">#F5EEF3</color>
+    <color name="appBlueTint">#E3E9F3</color>
+    <color name="appWhiteLightTint">#F5EEF3</color>
+    <color name="appBlueLightBorder">#B2BEE6</color>
+    <color name="appCyan">#89E0F5</color>
+
 </resources>

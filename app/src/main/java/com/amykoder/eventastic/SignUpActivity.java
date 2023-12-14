@@ -129,7 +129,7 @@ public class SignUpActivity extends AppCompatActivity {
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         String uid = user.getUid();
                                         checkSignUpDataInserted = true;
-                                        userDatabase.child(uid).setValue(new UserClass(email,password));
+                                        userDatabase.child(uid).setValue(new UserModel(email,password));
                                         customProgressDialog.dismiss();
                                         Toast.makeText(SignUpActivity.this, "Registration Successfull !", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(getApplicationContext(), HomeActivity.class));

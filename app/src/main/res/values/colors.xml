@@ -13,5 +13,5 @@
     <color name="appWhiteLightTint">#F5EEF3</color>
     <color name="appBlueLightBorder">#B2BEE6</color>
     <color name="appCyan">#89E0F5</color>
-
+    <color name="appLightGreyishWhite">#F2F2F2</color>
 </resources>

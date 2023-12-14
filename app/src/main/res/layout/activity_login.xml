@@ -146,7 +146,7 @@
             android:id="@+id/btnLoginWithGoogle"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:backgroundTint="#F2F2F2"
+            android:backgroundTint="@color/appLightGreyishWhite"
             android:drawableLeft="@drawable/google_logo_icon_resized"
             android:fontFamily="@font/poppins"
             android:text="Log in with Google"

@@ -15,4 +15,16 @@
     <style name="Theme.Eventastic.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Eventastic.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppHeadingText">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/appPurpleDark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="AppEventCardHeadingText">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/appPurpleLight</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

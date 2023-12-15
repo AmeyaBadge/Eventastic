@@ -1,4 +1,4 @@
-package com.amykoder.eventastic;
+package com.amykoder.eventastic.model;
 
 public class UserModel {
     public String email;

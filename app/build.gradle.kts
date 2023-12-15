@@ -53,6 +53,11 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-database")
     implementation("com.google.firebase:firebase-auth")
-    // Also add the dependency for the Google Play services library and specify its version
+    // Also add the dependency for the Google Play services library and specify its version for Sign in with Google
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+
+    //Glide for load image from Link
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+
 }

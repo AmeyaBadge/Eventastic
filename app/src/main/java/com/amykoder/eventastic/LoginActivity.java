@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    TextView txtRegister;
+    TextView txtRegister, txtForgotPassword;
     EditText edtLoginEmail, edtLoginPassword;
     Button btnLogin;
     Intent iSignUp;
@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         txtRegister = (TextView) findViewById(R.id.txtRegisterGoTo);
+        txtForgotPassword = (TextView) findViewById(R.id.txtForgotPassword);
 
         edtLoginEmail = (EditText) findViewById(R.id.edtLoginEmail);
         edtLoginPassword = (EditText) findViewById(R.id.edtLoginPassword);
@@ -88,6 +89,27 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 //Nothing
+            }
+        });
+
+        //On Forgot password textView clicked
+        txtForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+                if(!TextUtils.isEmpty(edtLoginEmail.getText().toString())){
+                    mAuth.sendPasswordResetEmail(edtLoginEmail.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(LoginActivity.this, "Password reset link sucessfully sent to enetered Email-ID !", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }else{
+                    Toast.makeText(LoginActivity.this, "Email address required !", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

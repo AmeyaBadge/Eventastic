@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    HomeViewModel homeViewModel;
 
     RecyclerView recyEventsHome;
     ArrayList<EventModel> arrLstEvents = new ArrayList<>();
@@ -35,8 +37,8 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        EditText just = (EditText) binding.edtSearchHome;
-        Toast.makeText(getContext(), just.getText().toString(), Toast.LENGTH_SHORT).show();
+        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+
         return root;
     }
 
@@ -49,24 +51,35 @@ public class HomeFragment extends Fragment {
         recyEventsHome = binding.recyEventsHome;
         recyEventsHome.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        arrLstEvents.add(new EventModel("Disco Night",
-                "https://source.unsplash.com/random/612x408/?event",
-                "This is one",
-                "29 May'23",
-                "12:00 PM"));
-        arrLstEvents.add(new EventModel("Bhajan",
-                "https://source.unsplash.com/random/612x408/?event",
-                "This is two",
-                "29 May'23",
-                "12:00 PM"));
-        arrLstEvents.add(new EventModel("Kirtan",
-                "https://source.unsplash.com/random/612x408/?event",
-                "This is three",
-                "29 May'23",
-                "12:00 PM"));
+//        arrLstEvents.add(new EventModel(
+//                1,
+//                "Disco Night",
+//                "https://source.unsplash.com/random/612x408/?event",
+//                "This is one",
+//                "29 May'23",
+//                "12:00 PM"));
+//        arrLstEvents.add(new EventModel(
+//                2,
+//                "Bhajan",
+//                "https://source.unsplash.com/random/612x408/?event",
+//                "This is two",
+//                "29 May'23",
+//                "12:00 PM"));
+//        arrLstEvents.add(new EventModel(
+//                3,
+//                "Kirtan",
+//                "https://source.unsplash.com/random/612x408/?event",
+//                "This is three",
+//                "29 May'23",
+//                "12:00 PM"));
 
-        CustomRecyclerEventsAdapter recyclerEventsAdapter = new CustomRecyclerEventsAdapter(getContext(), arrLstEvents);
-        recyEventsHome.setAdapter(recyclerEventsAdapter);
+        homeViewModel.getEventsArrList().observe(getViewLifecycleOwner(), new Observer<ArrayList<EventModel>>() {
+            @Override
+            public void onChanged(ArrayList<EventModel> eventModels) {
+                CustomRecyclerEventsAdapter recyclerEventsAdapter = new CustomRecyclerEventsAdapter(getContext(), eventModels);
+                recyEventsHome.setAdapter(recyclerEventsAdapter);
+            }
+        });
     }
 
     @Override

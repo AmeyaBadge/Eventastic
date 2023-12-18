@@ -34,12 +34,12 @@ public class CustomRecyclerEventsAdapter extends RecyclerView.Adapter<CustomRecy
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(arrLEvents.get(position).title);
-        holder.address.setText(arrLEvents.get(position).address);
-        holder.time.setText(arrLEvents.get(position).time);
-        holder.date.setText(arrLEvents.get(position).date);
+        holder.title.setText(arrLEvents.get(position).getTitle());
+        holder.address.setText(arrLEvents.get(position).getAddress());
+        holder.time.setText(arrLEvents.get(position).getTime());
+        holder.date.setText(arrLEvents.get(position).getDate());
 //        holder.image.setImageResource(arrLEvents.get(position).image);
-        Glide.with(context).load(arrLEvents.get(position).image).into(holder.image);
+        Glide.with(context).load(arrLEvents.get(position).getImage()).into(holder.image);
     }
 
     @Override

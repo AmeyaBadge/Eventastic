@@ -59,5 +59,9 @@ dependencies {
     //Glide for load image from Link
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+    //Retro Square to manipulate api json
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
 
 }

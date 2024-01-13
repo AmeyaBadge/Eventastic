@@ -10,5 +10,4 @@ import retrofit2.http.GET;
 public interface CustomAPI {
     @GET("index.php?fetchAll=true")
     Call<ArrayList<EventModel>> modelCall();
-
 }

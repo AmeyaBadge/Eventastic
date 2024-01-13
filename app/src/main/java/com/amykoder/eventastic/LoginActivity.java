@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     Intent iSignUp;
     CustomProgressDialogClass customProgressDialog;
-
     @Override
     protected void onStart() {
         super.onStart();

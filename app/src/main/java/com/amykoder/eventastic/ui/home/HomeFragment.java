@@ -27,7 +27,6 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     HomeViewModel homeViewModel;
-
     RecyclerView recyEventsHome;
     ArrayList<EventModel> arrLstEvents = new ArrayList<>();
 
